@@ -3,10 +3,7 @@
 This library helps you to handle all messages have been published in the host and the channel which you have defined.
 
 ```
-$ git pull https://github.com/ozziest/ms-logger.git
-$ cd ms-logger
-$ npm update
-$ node
+$ npm install rabbit-mq-json-messager --save
 ```
 
 
