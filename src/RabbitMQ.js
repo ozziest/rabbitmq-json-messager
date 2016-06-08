@@ -6,7 +6,18 @@ module.exports = function(amqp, callback) {
         connection.createChannel(function(err, ch) {
             ch.assertQueue(process.env.AMQP_CHANNEL, { durable: false });
             ch.consume(process.env.AMQP_CHANNEL, function(message) {
-                callback(JSON.parse(message.content.toString()));
+                var parsed = false;
+                try {
+                    parsed = JSON.parse(message.content.toString());
+                }
+                catch (err) {
+                    err;
+                }
+                
+                if (parsed !== false) {
+                    callback(parsed);
+                }
+                
             }, { noAck: true });
         });
     });
