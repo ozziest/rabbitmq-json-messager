@@ -2,7 +2,7 @@
   "name": "rabbit-mq-json-messager",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "src/RabbitMQ.js",
   "scripts": {
     "test": "gulp test"
   },
